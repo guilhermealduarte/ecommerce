@@ -1,5 +1,9 @@
 
 export const environment = {
-    urlApi: 'https://jdevt3716.c34.integrator.host/lojaintegratorspring/',
-    urlApiLocal: 'http://localhost:8080/'
+    urlApi: 'http://localhost:8080/'
+}
+
+export const secrets = {
+    clientId: 'myclientid',
+    clientSecret: 'myclientsecret'
 }

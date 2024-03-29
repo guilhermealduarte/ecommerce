@@ -1,6 +1,7 @@
-
-export interface User{
+export interface User {
     id?: Number;
+    name: String;
     email: String;
-    password: String;
+    phone: String;
+    birthDate: String;
 }

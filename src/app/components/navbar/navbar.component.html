@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    
+    <a class="navbar-brand" [routerLink]="['dashboard']">
+      <img src="http://174.138.92.34/images/logo-madesp.png" alt="Logo" height="24" class="d-inline-block align-text-top">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!--
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Link</a>
+        </li>
+        -->
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cadastros</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#" [routerLink]="['users']">Usuários</a></li>
+            <li><a class="dropdown-item" href="#" [routerLink]="['categories']">Categorias</a></li>
+            <li><a class="dropdown-item" href="#" [routerLink]="['products']">Produtos</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#" [routerLink]="['orders']">Pedidos</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Relatórios</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Relatório 1</a></li>
+            <li><a class="dropdown-item" href="#">Relatório 2</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Relatório 3</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="dropdown text-end">
+        <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="true">
+          <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+        </a>
+        <ul class="dropdown-menu text-small" data-popper-placement="bottom-end" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(0px, 34px);">
+          <li><a class="dropdown-item" href="#">Minha conta</a></li>
+          <li><a class="dropdown-item" href="#">Alterar senha</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="" (click)="logoutClick()">Sair</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</nav>

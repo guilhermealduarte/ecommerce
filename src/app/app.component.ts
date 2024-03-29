@@ -1,38 +1,26 @@
-import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { LoginService } from './services/login.service';
-import { User } from './models/user';
+import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  title = 'lojavirtualApp';
+export class AppComponent implements OnInit{
 
-  constructor(private formBuilder: FormBuilder, private loginService: LoginService){
+  constructor(private authService: AuthService, private router: Router, title: Title){
 
   }
 
-  loginForm = this.formBuilder.group({
-    id: [],
-    email: [null, Validators.required],
-    password: [null, Validators.required]
-  });
-
-  userObject(): User{
-    return {
-      email: this.loginForm.get('email')?.value!,
-      password: this.loginForm.get('password')?.value!
+  ngOnInit(): void {
+    if(this.authService.isLoggedIn() == true){
+      this.router.navigate(['dashboard']);
+    }
+    else{
+      this.router.navigate(['login']);
     }
   }
-
-  loginClick(){
-    const user = this.userObject();
-
-    const response = this.loginService.login(user);
-
-    console.info('Email: ' + user.email + ' Senha: ' + user.password);
-  }
+  
 }
